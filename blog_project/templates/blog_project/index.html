@@ -1,0 +1,49 @@
+{% extends './base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container container-flex">
+    <main role="main">
+
+        {% for post in posts %}
+
+        {% if forloop.counter0 == 0 %}
+
+        <article class="article-featured">
+            <img src="{{post.image.url}}" alt="" class="article-image">
+        </article>
+
+        {% endif %}
+        
+        <article class="article-recent">
+            <div class="article-recent-main">
+                <h2 class="article-title">{{post.title}}</h2>
+                <p class="article-body">{{post.description}}</p>
+                <a href="{% url 'continue_reading' post.id %}" class="article-read-more">CONTINUE READING</a>
+            </div>
+            <div class="article-recent-secondary">
+                <img src="{{post.image.url}}" alt="" class="article-image">
+                <p class="article-info">{{post.date}}</p>
+            </div>
+        </article>
+
+        {% endfor %}
+    </main>
+
+    <aside class="sidebar">
+
+        <div class="sidebar-widget">
+            <h2 class="widget-title">ABOUT ME</h2>
+            <img src="{% static 'blog_project/img/about-me.jpg' %}" alt="john doe" class="widget-image">
+            <p class="widget-body">I find life better, and I'm happier, when things are nice and simple.</p>
+        </div>
+
+
+
+    </aside>
+
+</div>
+
+{% endblock %}

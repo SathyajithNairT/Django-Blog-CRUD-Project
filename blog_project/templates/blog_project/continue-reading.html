@@ -1,0 +1,23 @@
+{% extends './base.html' %}
+
+{% block content %}
+
+<div class="continue-main-wrap">
+    <div class="continue-image-wrap">
+        <img src="{{data.image.url}}" alt="" class="continue-image">
+    </div>
+    <div class="continue-contents">
+        <div class="continue-heading">
+            {{data.title}}
+        </div>
+        <div class="continue-description">
+            {{data.description}}    
+        </div>
+        <div class="continue-btn-wrap">
+            <a href="{% url 'edit' data.id %}"><button class="continue-btn edit">EDIT</button></a>
+            <a href="{% url 'delete' data.id %}"><button class="continue-btn delete">DELETE</button></a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

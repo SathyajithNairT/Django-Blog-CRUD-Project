@@ -1,0 +1,20 @@
+{% extends './base.html' %}
+
+
+{% block content %}
+
+<div class="add-posts-wrap">
+    <div class="add-post-form">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="add-form-field">Title: <input type="text" name="title" id="add-title"></div>
+            <div class="add-form-field">Description: <textarea name="description" id="add-description"></textarea></div>
+            <div class="add-form-field">Image: <input type="file" name="image" id="add-image"></div>
+            <div class="add-form-field">Date: <input type="date" name="date" id="add-date"></div>
+
+            <div class="add-form-field"><button class="add-submit-btn" type="submit">Submit</button></div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

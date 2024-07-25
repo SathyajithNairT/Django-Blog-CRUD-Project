@@ -1,0 +1,19 @@
+{% load static %}
+
+<header>
+    <div class="container container-flex">
+        <div class="site-title">
+            <h1>Living the Petrol Head Life</h1>
+            <p class="subtitle">A blog exploring automobiles</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}" id="nav-index">Home</a></li>
+                <li><a href="{% url 'about' %}" id="nav-about">About me</a></li>
+                <li><a href="{% url 'add' %}" id="nav-add">Add post</a></li>
+            </ul>
+        </nav>
+    </div> <!-- / .container -->
+    
+    <script src="{% static 'blog_project/js/header.js' %}"></script>
+</header>

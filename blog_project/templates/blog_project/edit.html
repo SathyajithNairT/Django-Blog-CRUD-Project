@@ -1,0 +1,22 @@
+{% extends './base.html' %}
+
+{% block content %}
+
+<div class="edit-form-wrap">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="add-form-field">Title: <input type="text" name="title" value="{{data.title}}" id="add-title" ></div>
+        <div class="add-form-field">Description: <textarea name="description" id="add-description">{{data.description}}</textarea></div>
+        <div class="add-form-field">
+            Image: <input type="file" name="image" id="add-image">
+            {% if data.image %}
+                <img src="{{data.image.url}}" alt="" style="max-height: 5rem; margin-left: 2rem;">
+            {% endif %}
+        </div>
+        <div class="add-form-field">Date: <input type="date" name="date" value="{{ data.date|date:'Y-m-d' }}" id="add-date"></div>
+
+        <div class="add-form-field"><button class="add-submit-btn" type="submit">Save Changes</button></div>
+    </form>
+</div>
+
+{% endblock %}
